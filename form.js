@@ -1,3 +1,4 @@
+const form = document.getElementById("form");
 const addAreaButton = document.getElementById("add-area");
 const areaList = document.getElementById("area-list");
 const modal = document.getElementById("modal");
@@ -32,7 +33,6 @@ function updateAreaList() {
     });
 }
 
-const form = document.getElementById("form");
 form.addEventListener("submit", validateForm);
 
 function validateForm(event) {
@@ -40,33 +40,32 @@ function validateForm(event) {
 
     let nameInput = document.getElementById("name");
     let emailInput = document.getElementById("email");
-
+    let errorMessage;
     let validationFailed = false;
 
+    errorMessage = document.querySelector(".name .error-message");
+
     if (nameInput.value == "") {
-        let errorMessage = document.querySelector(".name .error-message");
         errorMessage.classList.add("visible");
         validationFailed = true;
     } else {
-        let errorMessage = document.querySelector(".name .error-message");
         errorMessage.classList.remove("visible");
     }
+
+    errorMessage = document.querySelector(".email .error-message");
 
     if (emailInput.value == "") {
-        let errorMessage = document.querySelector(".email .error-message");
         errorMessage.classList.add("visible");
         validationFailed = true;
     } else {
-        let errorMessage = document.querySelector(".email .error-message");
         errorMessage.classList.remove("visible");
     }
 
+    errorMessage = document.querySelector(".areas .error-message");
     if (!areas.length > 0) {
-        let errorMessage = document.querySelector(".areas .error-message");
         errorMessage.classList.add("visible");
         validationFailed = true;
     } else {
-        let errorMessage = document.querySelector(".areas .error-message");
         errorMessage.classList.remove("visible");
     }
 
