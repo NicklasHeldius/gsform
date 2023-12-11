@@ -1,0 +1,147 @@
+* {
+    margin: 10;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    background-color: #5dbea3;
+    min-height: 100vh;
+}
+
+.form-wrapper {
+    max-width: 460px;
+    color: #323952;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    margin: 4rem auto 0 auto;
+    background: #fff;
+    box-shadow: 7px 7px 10px -3px rgba(22, 20, 20, 0.4);
+    -webkit-box-shadow: 7px 7px 10px -3px rgba(22, 20, 20, 0.4);
+    -moz-box-shadow: 7px 7px 10px -3px rgba(22, 20, 20, 0.4);
+}
+
+fieldset {
+    border: none;
+}
+
+.row {
+    margin: 1rem 0;
+}
+
+.error-message {
+    color: red;
+    display: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+input,
+select {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    height: 38px;
+    border: 1px solid #424242;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+input {
+    width: 100%;
+}
+
+select {
+    width: calc(100% - 43px);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    font-weight: 700;
+    background-color: #5dbea3;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    margin: 1rem 0;
+}
+
+.btn:hover,
+.remove-area:hover,
+#add-area:hover {
+    background-color: #56af96;
+}
+
+#add-area {
+    height: 38px;
+    width: 38px;
+    background-color: #5dbea3;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#area-list {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.area {
+    width: 100%;
+    margin: 0.25rem 0;
+    line-height: 32px;
+    border-radius: 5px;
+    background-color: #e2e8ea;
+    overflow: hidden;
+}
+
+.area span {
+    padding: 0 1rem;
+}
+
+.remove-area {
+    float: right;
+    width: 32px;
+    height: 32px;
+    background-image: url("delete.png");
+    background-color: #5dbea3;
+    background-position: center;
+    background-size: 16px;
+    background-repeat: no-repeat;
+}
+#overlay {
+    display: none;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3)
+}
+#modal {
+    display: none;
+    position: absolute;
+    padding: 1.5rem 2rem 2.5rem 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 3px 3px 10px 2px rgba(22, 20, 20, 0.42);
+    -webkit-box-shadow: 3px 3px 10px 2px rgba(22, 20, 20, 0.42);
+    -moz-box-shadow: 3px 3px 10px 2px rgba(22, 20, 20, 0.42);
+}
+
+.visible {
+    display: block !important;
+}

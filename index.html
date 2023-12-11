@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Nyhetsbrev</title>
+        <link rel="stylesheet" href="form.css" />
+    </head>
+    <body>
+        <div class="form-wrapper">
+            <form action="" id="form">
+                <h2>Personuppgifter</h2>
+                <div class="row name">
+                    <label for="name">Namn*</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Namn"
+                    />
+                    <p class="error-message">Fyll i för och efternamn.</p>
+                </div>
+
+                <div class="row email">
+                    <label for="email">E-post*</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="e-post"
+                    />
+                    <p class="error-message">Fyll i epostadress.</p>
+                </div>
+                <div class="row areas">
+                    <h2>Område</h2>
+                    <label for="areaName">Välj ett eller flera områden*</label>
+                    <select name="areaName" id="areaName">
+                        <option value="">Välj områden</option>
+                        <option value="Förskola och utbildning">
+                            Förskola och utbildning
+                        </option>
+                        <option value="Litteratur och bibliotek">
+                            Litteratur och bibliotek
+                        </option>
+                        <option value="Stadsutveckling">Stadsutveckling</option>
+                        <option value="Trafik och gator">
+                            Trafik och gator
+                        </option>
+                        <option value="Arbetslivs och jobb">
+                            Arbetslivs och jobb
+                        </option>
+                        <option value="Kommun och bibliotek">
+                            Kommun och bibliotek
+                        </option>
+                    </select>
+                    <button type="button" id="add-area">+</button>
+                    <p class="error-message">Välj minst 1 område.</p>
+                    <div id="area-list"></div>
+                </div>
+                <button class="btn" id="btnsubs">Skicka in</button>
+            </form>
+        </div>
+        <div id="overlay"></div>
+        <div id="modal">
+            <h3>Uppgifter som skickats in</h3>
+            <div class="row">
+                <strong>Namn</strong>
+                <div class="name-confirm"></div>
+            </div>
+            <div class="row">
+                <strong>E-post</strong>
+                <div class="email-confirm"></div>
+            </div>
+            <div class="row">
+                <strong>Områden</strong>
+                <div class="areas-confirm"></div>
+            </div>
+            <button class="btn" onclick="closeModal()">Stäng</button>
+        </div>
+    </body>
+    <script type="text/javascript" src="form.js"></script>
+</html>
