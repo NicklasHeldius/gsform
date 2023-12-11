@@ -79,6 +79,7 @@ function validateForm(event) {
         nameConfirm.innerHTML = nameInput.value;
         emailConfirm.innerHTML = emailInput.value;
 
+        areasConfirm.innerHTML = "";
         areas.forEach((area) => {
             areasConfirm.innerHTML += "<div>" + area + "</div>";
         });
