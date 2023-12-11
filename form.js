@@ -69,9 +69,7 @@ function validateForm(event) {
         errorMessage.classList.remove("visible");
     }
 
-    if (validationFailed) {
-        return false;
-    } else {
+    if (!validationFailed) {
         let nameConfirm = document.querySelector(".name-confirm");
         let emailConfirm = document.querySelector(".email-confirm");
         let areasConfirm = document.querySelector(".areas-confirm");

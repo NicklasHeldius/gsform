@@ -1,6 +1,4 @@
 * {
-    margin: 10;
-    padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
@@ -31,6 +29,7 @@ fieldset {
 
 .error-message {
     color: red;
+    margin: 0.5rem 0;
     display: none;
 }
 
