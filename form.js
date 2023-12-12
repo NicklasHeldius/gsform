@@ -57,7 +57,11 @@ function validateForm(event) {
 
     errorMessage = document.querySelector(".email .error-message");
 
-    if (emailInput.value == "") {
+    const regexMatch = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+        emailInput.value
+    );
+
+    if (!regexMatch) {
         errorMessage.classList.add("visible");
         validationFailed = true;
     } else {
