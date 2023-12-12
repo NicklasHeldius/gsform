@@ -3,11 +3,11 @@
     <head>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Nyhetsbrev</title>
-        <link rel="stylesheet" href="form.css" />
+        <link rel="stylesheet" href="main.css" />
     </head>
     <body>
-        <div class="form-wrapper">
-            <form id="form">
+        <div class="container">
+            <form id="form" action="confirmation.html" method="get">
                 <h2>Personuppgifter</h2>
                 <div class="row name">
                     <label for="name">Namn*</label>
@@ -54,27 +54,10 @@
                     <button type="button" id="add-area">+</button>
                     <p class="error-message">Välj minst 1 område.</p>
                     <div id="area-list"></div>
+                    <input type="hidden" value="" name="areas-selected" id="areas-selected" />
                 </div>
-                <button class="btn" id="btnsubs">Skicka in</button>
+                <button class="btn">Skicka in</button>
             </form>
         </div>
-        <div id="overlay"></div>
-        <div id="modal">
-            <h3>Uppgifter som skickats in</h3>
-            <div class="row">
-                <strong>Namn</strong>
-                <div class="name-confirm"></div>
-            </div>
-            <div class="row">
-                <strong>E-post</strong>
-                <div class="email-confirm"></div>
-            </div>
-            <div class="row">
-                <strong>Områden</strong>
-                <div class="areas-confirm"></div>
-            </div>
-            <button class="btn" onclick="closeModal()">Stäng</button>
-        </div>
-    </body>
     <script type="text/javascript" src="form.js"></script>
 </html>

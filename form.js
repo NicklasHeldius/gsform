@@ -1,6 +1,7 @@
 const form = document.getElementById("form");
 const addAreaButton = document.getElementById("add-area");
 const areaList = document.getElementById("area-list");
+const areasSelected = document.getElementById("areas-selected");
 const modal = document.getElementById("modal");
 const overlay = document.getElementById("overlay");
 const areas = [];
@@ -31,6 +32,8 @@ function updateAreaList() {
             index +
             ")' class='remove-area'></button></div>";
     });
+
+    areasSelected.value = areas;
 }
 
 form.addEventListener("submit", validateForm);
@@ -62,6 +65,7 @@ function validateForm(event) {
     }
 
     errorMessage = document.querySelector(".areas .error-message");
+
     if (!areas.length > 0) {
         errorMessage.classList.add("visible");
         validationFailed = true;
@@ -70,24 +74,6 @@ function validateForm(event) {
     }
 
     if (!validationFailed) {
-        let nameConfirm = document.querySelector(".name-confirm");
-        let emailConfirm = document.querySelector(".email-confirm");
-        let areasConfirm = document.querySelector(".areas-confirm");
-
-        nameConfirm.innerHTML = nameInput.value;
-        emailConfirm.innerHTML = emailInput.value;
-
-        areasConfirm.innerHTML = "";
-        areas.forEach((area) => {
-            areasConfirm.innerHTML += "<div>" + area + "</div>";
-        });
-
-        overlay.classList.add("visible");
-        modal.classList.add("visible");
+        form.submit();
     }
-}
-
-function closeModal() {
-    overlay.classList.remove("visible");
-    modal.classList.remove("visible");
 }
